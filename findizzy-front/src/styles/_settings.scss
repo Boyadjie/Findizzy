@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+
+
+$font-1: sans-serif;
+
+$color-1: #42C1BD;
+$color-2: #FFF9F3;
+$color-3: #FFF3E8;
+$color-4: #707070;
+$color-5: black;
+$color-6: #F5BAF7;
+$color-1-transparent: rgba(66,193,189, 0.35);
+
+$font-footer: 2.2rem;
+$font-min: 1.5rem;
+$font-small: 2.5rem;
+$font-medium: 4rem;
+$font-big: 5rem;
+$font-title: 12rem;
+
+$resp-14-footer: 1.7rem;
+$resp-14-min: 1rem;
+$resp-14-small: 2rem;
+$resp-14-medium: 2.5rem;
+$resp-14-big: 4rem;
+$resp-14-title: 6rem;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $font-1;
+  color: $color-5;
+  background-color: $color-2;
+  line-height: 1;
+  overflow-x: hidden;
+  position: relative;
+}
+h1,h2,h3,form {
+  width: max-content;
+}
+h1 {
+  font-family: $font-1;
+  color: $color-5;
+  width:max-content;
+}
+p {
+  line-height: 1.2;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: $color-5;
+  cursor: pointer;
+}
+span, img {
+  display: block;
+}
+.wrap {
+  max-width: 1290px;
+  margin: 0 auto;
+}
+.btn {
+  display: block;
+  font-size: $font-small;
+  width: max-content;
+  padding: auto;
+  background: $color-1;
+  color: white;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+
+  &:hover {
+    cursor: pointer;
+    padding: auto;
+  }
+}
+
+.notFound {
+  height: 95vh;
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  .btn {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .btn {
+    font-size: $font-min;
+  }
+}
