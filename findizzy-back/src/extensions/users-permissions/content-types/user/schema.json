@@ -72,7 +72,7 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::pet.pet",
-      "mappedBy": "user"
+      "mappedBy": "users_permissions_user"
     }
   }
 }

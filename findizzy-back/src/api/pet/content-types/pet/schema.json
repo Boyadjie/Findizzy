@@ -37,15 +37,15 @@
     "last_localisation": {
       "type": "string"
     },
-    "user": {
+    "identification_token": {
+      "type": "password",
+      "required": true
+    },
+    "users_permissions_user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "pets"
-    },
-    "identification_token": {
-      "type": "password",
-      "required": true
     }
   }
 }
