@@ -37,10 +37,6 @@
     "last_localisation": {
       "type": "string"
     },
-    "identification_token": {
-      "type": "password",
-      "required": true
-    },
     "users_permissions_user": {
       "type": "relation",
       "relation": "manyToOne",
