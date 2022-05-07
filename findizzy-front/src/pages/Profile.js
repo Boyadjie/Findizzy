@@ -1,10 +1,19 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
+// icons
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+// material components
 import Box from '@mui/material/Box';
-import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
-import Avatar from '@mui/material/Avatar';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+// components
+import ProfileApi from '../services/profileApi'
+import UserInfoLoader from '../components/loaders/userInfoLoader';
+import UserPetsLoader from '../components/loaders/userPetsLoader';
+import UserInfos from '../components/profile/UserInfos';
+import UserPets from '../components/profile/UserPets';
 
 const Profile = () => {
   const [userLoading, setUserLoading] = useState(true);
@@ -13,96 +22,60 @@ const Profile = () => {
   const [pets, setPets] = useState(null);
 
     useEffect(() => {
-      fetch("http://localhost:1337/api/users/1", 
-      {
-        method: "GET",
-        headers: {
-          'Accept': 'Application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(response => {
-        setTimeout(() => {
-          setUser(response);
-          setUserLoading(false);
-        }, 2000)
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    }, [])
+      fetchUser();
+      fetchUserPets();
+    }, []);
 
-    useEffect(() => {
-      fetch("http://localhost:1337/api/pets?user=1", 
-      {
-        method: "GET",
-        headers: {
-          'Accept': 'Application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(response => {
-        setTimeout(() => {
-          setPets(response);
-          setPetLoading(false);
-        }, 2000)
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    }, [])
+    const fetchUser = async () => {
+      const myUser = await ProfileApi.findUser()
+      setTimeout(() => {
+        setUser(myUser);
+        setUserLoading(false);
+      }, 1000)
+    }
+
+    const fetchUserPets = async () => {
+      const myPets = await ProfileApi.findUserPets()
+      setTimeout(() => {
+        setPets(myPets);
+        setPetLoading(false);
+      }, 1000)
+    }
 
   return (
-    <div>
-      <a className='' href="/"><ArrowBackIcon sx={{ fontSize: 40 }} /></a>
-      <h1>Mon Profil</h1>
-      <div className='profileInformations'>
-        { userLoading === true ? (
-          <Box>
-            <Stack spacing={1}>
-              <Skeleton variant="circular" width={40} height={40} />
-              <Skeleton variant="rectangular" width={50} height={10} />
-              <Skeleton variant="rectangular" width={100} height={10} />
-            </Stack>
-          </Box>
-        ) : (
-          <Box>
-            <Stack spacing={1}>
-              <Avatar alt="User Avatar" src="" />
-              <h3> { user.username } </h3>
-              <h2> { user.email } </h2>
-            </Stack>
-          </Box>
-        ) }
-      </div>
+    <Box>
+      <Grid className='profileHeader' container spacing={2} alignItems="center">
+        <Grid item xs={2}>
+            <a className='back-arrow' href="/">
+              <ArrowBackIcon sx={{ fontSize: 40 }} />
+            </a>
+        </Grid>
+        <Grid item xs={8}>
+            <h1>Mon Profil</h1>
+        </Grid>
+      </Grid>
 
-      <div className='profileInformations'>
-        { petLoading === true ? (
-          <Box>
-            <Stack spacing={1}>
-              <Skeleton variant="rectangular" width={200} height={40} />
-              <Skeleton variant="rectangular" width={200} height={40} />
-            </Stack>
-          </Box>
+      <Box className='profileInformations'>
+        { userLoading === true ? (
+          <UserInfoLoader />
         ) : (
-          <Box>
-            <Stack spacing={1}>
-              { pets.data.map((pet) => (
-                <Box>
-                  <Stack direction="row" spacing={1}>
-                    <Avatar alt="Pet Avatar" src="" />
-                    <Stack>
-                      <p>{ pet.attributes.name }</p>
-                      <p>{ pet.attributes.type }</p>
-                    </Stack>
-                  </Stack>
-                </Box>
-              ))}
-            </Stack>
-          </Box>
+          <UserInfos user={user} />
         ) }
-      </div>
-    </div>
+      </Box>
+
+      <Box className='petsInformations'>
+        <Stack direction="row" alignItems="center" justifyContent="space-between">
+          <h2>Mes animaux</h2>
+          <Button href="/profil/ajouter-animal" variant="contained" endIcon={<AddCircleIcon />}>Ajouter un animal</Button>
+        </Stack>
+
+        { petLoading === true ? (
+          <UserPetsLoader />
+        ) : (
+          <UserPets pets={pets} />
+        ) }
+      </Box>
+    </Box>
   );
 };
 
