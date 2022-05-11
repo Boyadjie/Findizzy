@@ -1,26 +1,15 @@
+import { URL_USERS, URL_PETS } from "../config"
+import axios from "axios";
 
 function findUser() {
-  return fetch("http://localhost:1337/api/users/1", {
-    method: "GET",
-    headers: {
-      'Accept': 'Application/json'
-    }
-  })
-  .then(response => response.json())
+  return axios.get(URL_USERS + "/1").then(response => response.data)
   .catch(err => {
     console.log(err);
   });
 }
 
 function findUserPets() {
-  return fetch("http://localhost:1337/api/pets?user=1", 
-  {
-    method: "GET",
-    headers: {
-      'Accept': 'Application/json'
-    }
-  })
-  .then(response => response.json())
+  return axios.get(URL_PETS + "?filters[user][id][$eq]=1").then(response => response.data)
   .catch(err => {
     console.log(err);
   });

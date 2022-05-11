@@ -38,7 +38,7 @@ const Footer = () => {
 
             <div className='cities'>
               {cities.map((city) =>
-                <p>{city}</p>
+                <p key={city}>{city}</p>
               )}
             </div>
           </div>

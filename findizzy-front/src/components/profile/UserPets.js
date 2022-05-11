@@ -14,7 +14,8 @@ const UserPets = (props) => {
               <Avatar alt="Pet Avatar" src="" />
               <Stack>
                 <p>{ pet.attributes.name }</p>
-                <p>{ pet.attributes.type }</p>
+                <p>{ pet.attributes.breed }</p>
+                <p>{ pet.attributes.age }</p>
                 <a href={`/profil/pet?id=${pet.id}`}>Détails</a>
               </Stack>
             </Stack>

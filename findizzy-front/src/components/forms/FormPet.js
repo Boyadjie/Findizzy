@@ -43,17 +43,27 @@ const FormPet = () => {
         <Grid item >
           <TextField
             required
-            id="race"
+            id="breed"
             label="Race"
             variant="filled"
-            name="race"
+            name="breed"
             type="text"
+            onChange={handleChange}
+          />
+        </Grid>
+        <Grid item >
+          <TextField
+            id="age"
+            label="Age"
+            variant="filled"
+            name="age"
+            type="number"
             onChange={handleChange}
           />
         </Grid>
         <Grid item>
           <label htmlFor="pet-avatar">Picture : </label>
-          <input type="file" id="pet-avatar" name="pat-avatar" accept="image/png, image/jpeg, image/webp, image/jpg" />
+          <input type="file" id="pet-avatar" name="picture" accept="image/png, image/jpeg, image/webp, image/jpg" />
         </Grid>
 
         <Button variant="contained" type='submit'>Envoyer</Button>

@@ -4,7 +4,7 @@ const Socials = (props) => {
   return (
     <div className='socials'>
       {props.socials.map((item) =>
-        <a href={item.link}><img src={`/img/socials/${item.image}`} alt={`${item.name} Logo`} /></a>
+        <a key={item.name} href={item.link}><img src={`/img/socials/${item.image}`} alt={`${item.name} Logo`} /></a>
       )}
     </div>
   );
