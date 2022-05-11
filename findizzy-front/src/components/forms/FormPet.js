@@ -4,8 +4,8 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import petApi from '../../services/petApi';
 
-const FormPet = () => {
-  const [pet, setPet] = useState({});
+const FormPet = (props) => {
+  const [pet, setPet] = useState({user: parseInt(props.userId)});
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -57,10 +57,21 @@ const FormPet = () => {
             label="Age"
             variant="filled"
             name="age"
-            type="number"
+            inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
             onChange={handleChange}
           />
         </Grid>
+        {/* test avec un id fix pour voir si le pet est ajouter au bon user */}
+        {/* <Grid item >
+          <TextField
+            id="user"
+            label="Propriétaire"
+            variant="filled"
+            name="user"
+            inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+            onChange={handleChange}
+          />
+        </Grid> */}
         <Grid item>
           <label htmlFor="pet-avatar">Picture : </label>
           <input type="file" id="pet-avatar" name="picture" accept="image/png, image/jpeg, image/webp, image/jpg" />

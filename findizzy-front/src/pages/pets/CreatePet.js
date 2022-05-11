@@ -19,7 +19,7 @@ const CreatePet = () => {
       </Grid>
 
       <Box>
-        <FormPet />
+        <FormPet userId="1" />
       </Box>
     </div>
   );
