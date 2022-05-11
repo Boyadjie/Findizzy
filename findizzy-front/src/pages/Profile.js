@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 // icons
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AddCircleIcon from '@mui/icons-material/AddCircle';

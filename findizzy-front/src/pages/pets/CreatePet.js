@@ -1,8 +1,8 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import CreatePetForm from '../../components/forms/createPetForm';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import FormPet from '../../components/forms/FormPet';
 
 const CreatePet = () => {
   return (
@@ -19,7 +19,7 @@ const CreatePet = () => {
       </Grid>
 
       <Box>
-        <CreatePetForm />
+        <FormPet />
       </Box>
     </div>
   );

@@ -26,7 +26,9 @@ function findUserPets() {
   });
 }
 
-export default{
+const exportedObject = {
   findUser,
   findUserPets,
 };
+
+export default exportedObject;
