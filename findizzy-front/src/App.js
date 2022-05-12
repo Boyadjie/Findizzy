@@ -9,7 +9,8 @@ import Location from './pages/Location/Location';
 import SingIn from './pages/SingIn';
 import AuthContext from './contexts/authContext';
 import authApi from './services/authApi';
-import PrivateRoute from './components/PrivateRoute';
+import PrivateLogin from './components/PrivateLogin';
+import PrivateSettings from './components/PrivateSettings';
 import Settings from './pages/Settings';
 
 const App = () => {
@@ -26,11 +27,11 @@ const App = () => {
         <Routes>
           <Route exact path='/' element={<Home/>} />
           <Route exact path='/connexion' element={<SingIn/>} />
-          <Route exact path='/profil' element={<PrivateRoute ><Profile/></PrivateRoute>} />
+          <Route exact path='/profil' element={<PrivateLogin ><Profile/></PrivateLogin>} />
           <Route exact path="/profil/ajouter-animal" element={<CreatePet/>} />
           <Route exact path='/profil/pet' element={<PetInfo/>} />
           <Route exact path='/localiser' element={<Location />} />
-          <Route exact path='/reglages' element={<Settings />} />
+          <Route exact path='/reglages' element={<PrivateSettings ><Settings/></PrivateSettings>} />
           <Route path='*' element={<NotFound/>} />
         </Routes>
       </BrowserRouter>

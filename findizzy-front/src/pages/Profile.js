@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 // icons
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -12,6 +11,7 @@ import Button from '@mui/material/Button';
 import ProfileApi from '../services/profileApi'
 import UserInfoLoader from '../components/loaders/userInfoLoader';
 import UserPetsLoader from '../components/loaders/userPetsLoader';
+import ButtonLoader from '../components/loaders/buttonLoader';
 import UserInfos from '../components/profile/UserInfos';
 import UserPets from '../components/profile/UserPets';
 
@@ -21,26 +21,26 @@ const Profile = () => {
   const [user, setUser] = useState(null);
   const [pets, setPets] = useState(null);
 
-    useEffect(() => {
-      fetchUser();
-      fetchUserPets();
-    }, []);
+  useEffect(() => {
+    fetchUser();
+    fetchUserPets();
+  }, []);
 
-    const fetchUser = async () => {
-      const myUser = await ProfileApi.findUser()
-      setTimeout(() => {
-        setUser(myUser);
-        setUserLoading(false);
-      }, 1000)
-    }
+  const fetchUser = async () => {
+    const myUser = await ProfileApi.findUser()
+    setTimeout(() => {
+      setUser(myUser);
+      setUserLoading(false);
+    }, 500)
+  }
 
-    const fetchUserPets = async () => {
-      const myPets = await ProfileApi.findUserPets()
-      setTimeout(() => {
-        setPets(myPets);
-        setPetLoading(false);
-      }, 1000)
-    }
+  const fetchUserPets = async () => {
+    const myPets = await ProfileApi.findUserPets()
+    setTimeout(() => {
+      setPets(myPets);
+      setPetLoading(false);
+    }, 500)
+  }
 
   return (
     <Box>
@@ -66,7 +66,11 @@ const Profile = () => {
       <Box className='petsInformations'>
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <h2>Mes animaux</h2>
-          <Button href="/profil/ajouter-animal" variant="contained" endIcon={<AddCircleIcon />}>Ajouter un animal</Button>
+          { userLoading === true ? (
+          <ButtonLoader />
+        ) : (
+          <Button href={`/profil/ajouter-animal?userId=${user.id}`} variant="contained" endIcon={<AddCircleIcon />}>Ajouter un animal</Button>
+        ) }
         </Stack>
 
         { petLoading === true ? (

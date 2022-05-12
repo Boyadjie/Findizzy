@@ -7,7 +7,7 @@ function authenticate(credentials) {
   .then(res => res.data)
   .then(data => {
     window.localStorage.setItem('authToken', data.jwt);
-    window.localStorage.setItem('username', data.user.username);
+    window.localStorage.setItem('userId', data.user.id);
     axios.defaults.headers["Authorization"] = "Bearer " + data.jwt;
   })
   .catch(error => {
@@ -33,7 +33,7 @@ function isAuthenticated() {
 
 function logout() {
   window.localStorage.removeItem('authToken');
-  window.localStorage.removeItem('username');
+  window.localStorage.removeItem('userId');
   delete axios.defaults.headers['Authorization'];
 }
 

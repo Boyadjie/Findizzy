@@ -15,13 +15,14 @@ const FormLogin = () => {
     event.preventDefault();
 
     try {
-      const data = authApi.authenticate(credentials);
+      await authApi.authenticate(credentials);
       setIsAuthenticated(true);
-      navigate('/profil');
+      navigate('/');
     } catch (e) {
       console.log(e);
     }
   }
+  
 
   const handleChange = ({ currentTarget }) => {
     const {name, value} = currentTarget;
