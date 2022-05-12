@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import CreatePet from './pages/pets/CreatePet';
 import Profile from './pages/Profile';
+import Location from './pages/Location/Location';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route exact path='/profil' element={<Profile/>} />
         <Route exact path="/profil/ajouter-animal" element={<CreatePet/>} />
         <Route exact path='/profil/pet' element={<PetInfo/>} />
+        <Route exact path='/localiser' element={<Location />} />
         <Route path='*' element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
