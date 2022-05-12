@@ -1,7 +1,8 @@
+import { URL_PETS } from "../config"
 import axios from "axios";
 
 function createPet(pet) {
-  axios.post('http://localhost:1337/api/pets', { data: pet })
+  axios.post(URL_PETS, { data: pet })
   .then(response => { 
     console.log(response)
   })
