@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PetInfo from './components/profile/PetInfo';
 import Home from './pages/Home';
@@ -10,9 +10,15 @@ import SingIn from './pages/SingIn';
 import AuthContext from './contexts/authContext';
 import authApi from './services/authApi';
 import PrivateRoute from './components/PrivateRoute';
+import Settings from './pages/Settings';
 
 const App = () => {
   const [isAuthenticated,setIsAuthenticated] = useState(authApi.isAuthenticated);
+
+  useEffect(() => {
+    authApi.setup();
+    authApi.isAuthenticated();
+  })
 
   return (
     <AuthContext.Provider value={{isAuthenticated,setIsAuthenticated}}>
@@ -24,6 +30,7 @@ const App = () => {
           <Route exact path="/profil/ajouter-animal" element={<CreatePet/>} />
           <Route exact path='/profil/pet' element={<PetInfo/>} />
           <Route exact path='/localiser' element={<Location />} />
+          <Route exact path='/reglages' element={<Settings />} />
           <Route path='*' element={<NotFound/>} />
         </Routes>
       </BrowserRouter>

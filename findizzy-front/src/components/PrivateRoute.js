@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
 
   if (isAuthenticated) {
     return children;
-  }else if(!isAuthenticated && pathname == "/connexion") {
+  }else if(!isAuthenticated && pathname === "/connexion") {
     return <Navigate to="/connexion" state={{ from: pathname }} replace />
   }else {
     return <Navigate to="/" state={{ from: pathname }} replace />

@@ -31,9 +31,29 @@ function isAuthenticated() {
   }
 }
 
+function logout() {
+  window.localStorage.removeItem('authToken');
+  window.localStorage.removeItem('username');
+  delete axios.defaults.headers['Authorization'];
+}
+
+function setup() {
+  const token = window.localStorage.getItem('authToken');
+
+  if(token){
+    const {exp} = jwtDecode(token);
+
+    if(exp * 1000 > new Date().getTime()){
+      axios.defaults.headers["Authorization"] = "Bearer " + token;
+    }
+  }
+}
+
 const exportedObject = {
   authenticate,
   isAuthenticated,
+  logout,
+  setup,
 };
 
 export default exportedObject;
