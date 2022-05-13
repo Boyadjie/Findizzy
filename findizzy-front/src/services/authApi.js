@@ -1,9 +1,22 @@
-import { URL_LOGIN } from "../config"
+import { URL_LOGIN, URL_REGISTER} from "../config"
 import axios from "axios";
 import jwtDecode from "jwt-decode"
 
 function authenticate(credentials) {
   axios.post(URL_LOGIN, credentials)
+  .then(res => res.data)
+  .then(data => {
+    window.localStorage.setItem('authToken', data.jwt);
+    window.localStorage.setItem('userId', data.user.id);
+    axios.defaults.headers["Authorization"] = "Bearer " + data.jwt;
+  })
+  .catch(error => {
+      console.log(error.response)
+  });
+}
+
+function register(credentials) {
+  axios.post(URL_REGISTER, credentials)
   .then(res => res.data)
   .then(data => {
     window.localStorage.setItem('authToken', data.jwt);
@@ -51,6 +64,7 @@ function setup() {
 
 const exportedObject = {
   authenticate,
+  register,
   isAuthenticated,
   logout,
   setup,
