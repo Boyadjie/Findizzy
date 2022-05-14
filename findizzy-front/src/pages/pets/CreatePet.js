@@ -25,7 +25,7 @@ const CreatePet = () => {
   
   return (
     <div>
-      <Grid className='profileHeader' container spacing={2} alignItems="center">
+      <Grid className='header' container spacing={2} alignItems="center">
         <Grid item xs={2}>
             <a className='back-arrow' href="/profil">
               <ArrowBackIcon sx={{ fontSize: 40 }} />

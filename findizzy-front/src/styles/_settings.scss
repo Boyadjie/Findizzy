@@ -60,31 +60,19 @@ li {
 }
 a {
   text-decoration: none;
-  color: $color-5;
   cursor: pointer;
+  color: $color-5;
+
+  &:visited {
+    color: $color-5;
+  }
+
+  &:active {
+    color: $color-1;
+  }
 }
 span, img {
   display: block;
-}
-.wrap {
-  max-width: 1290px;
-  margin: 0 auto;
-}
-.btn {
-  display: block;
-  font-size: $font-small;
-  width: max-content;
-  padding: auto;
-  background: $color-1;
-  color: white;
-  border: none;
-  transition: all 0.3s ease-in-out;
-  transform-origin: center;
-
-  &:hover {
-    cursor: pointer;
-    padding: auto;
-  }
 }
 
 .notFound {
@@ -98,8 +86,29 @@ span, img {
   }
 }
 
-@media screen and (max-width: 1440px) {
-  .btn {
-    font-size: $font-min;
+.header {
+  position: relative;
+  z-index: 5;
+  padding: 2rem 1rem;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 10px $color-shadows;
+
+  .back-arrow {
+    svg {
+      font-size: 4rem;
+    }
+
+    &:active {
+      color: $color-1;
+    }
+
+    &:visited {
+      color: $color-5;
+    }
+  }
+
+  h1 {
+    width: 100%;
+    text-align: center;
   }
 }
