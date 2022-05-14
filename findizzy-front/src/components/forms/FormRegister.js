@@ -6,16 +6,16 @@ import authApi from '../../services/authApi';
 import authContext from '../../contexts/authContext';
 import { useNavigate } from 'react-router-dom';
 
-const FormLogin = () => {
+const FormRegister = () => {
   const navigate = useNavigate();
   const {setIsAuthenticated} = useContext(authContext);
-  const [credentials, setCredentials] = useState({ identifier: "", password: "" });
+  const [credentials, setCredentials] = useState({ username: "", email: "", phone: "", password: "" });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      await authApi.authenticate(credentials);
+      await authApi.register(credentials);
       setIsAuthenticated(true);
       navigate('/');
     } catch (e) {
@@ -33,28 +33,26 @@ const FormLogin = () => {
   }
 
   return (
-    <div className='formLogin'>
+    <div className='formRegister'>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2} alignItems="center" direction="column">
+        <Grid item>
+            <TextField required id="username" label="Nom d'utilisateur" variant="standard" name="username" type="text" 
+              onChange={handleChange}
+            />
+          </Grid>
           <Grid item>
-            <TextField
-                required
-                id="identifier"
-                label="E-mail"
-                variant="filled"
-                name="identifier"
-                type="text"
-                onChange={handleChange}
-              />
+            <TextField required id="email" label="E-mail" variant="standard" name="email" type="text" 
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item>
+            <TextField id="phone" label="Numéro de téléphone" variant="standard" name="phone" type="text" 
+              onChange={handleChange}
+            />
           </Grid>
           <Grid item >
-            <TextField
-              required
-              id="password"
-              label="Mot de passe"
-              variant="filled"
-              name="password"
-              type="text"
+            <TextField required id="password" label="Mot de passe" variant="standard" name="password" type="password" 
               onChange={handleChange}
             />
           </Grid>
@@ -66,4 +64,4 @@ const FormLogin = () => {
   );
 };
 
-export default FormLogin;
+export default FormRegister;

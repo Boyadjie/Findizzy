@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import FormPet from '../../components/forms/FormPet';
+import PetFormLoader from '../../components/loaders/petFormLoader';
+
+
 
 const CreatePet = () => {
+  const [userIdLoading, setUserIdLoading] = useState(true);
+  const [userId, setUserId] = useState(null);
+
+  useEffect(() => {
+    getUserId();
+  }, []);
+
+  const getUserId = async () => {
+    const myUserId = await window.localStorage.getItem("userId");
+    setTimeout(() => {
+      setUserId(myUserId);
+      setUserIdLoading(false);
+    }, 500)
+  }
+  
   return (
     <div>
       <Grid className='profileHeader' container spacing={2} alignItems="center">
@@ -19,7 +37,11 @@ const CreatePet = () => {
       </Grid>
 
       <Box>
-        <FormPet userId="1" />
+        { userIdLoading ? (
+          <PetFormLoader />
+        ) : (
+          <FormPet userId={ userId } />
+        )}
       </Box>
     </div>
   );
