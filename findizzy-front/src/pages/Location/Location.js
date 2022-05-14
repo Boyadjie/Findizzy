@@ -25,9 +25,9 @@ const Location = () => {
                 </p>
             </div>
 
-            <footer>
+            <div className='location_footer'>
                 <button>Autoriser la localisation</button>
-            </footer>
+            </div>
 
         </div>
     );     
