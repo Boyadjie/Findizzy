@@ -17,8 +17,8 @@ const Location = () => {
             </Grid>
 
             <div className="container">
-                <img src="img/image1.png" alt='icon localiser' />
-                <h2>Position</h2>
+                <img src="img/localiser.png" alt='icon localiser' />
+                <p id='localisation_position'>Position</p>
                 <p>Envoyer votre position lorsque vous rencontrer
                 un chien abandonné. Afin d'aider son maître à
                 le retrouver.
