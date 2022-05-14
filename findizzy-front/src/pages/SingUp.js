@@ -6,7 +6,7 @@ const SingUp = () => {
     <div className='signIn'>
       <FormRegister />
 
-      <p className='signInUp-redirect'>Tu as déjà un compte? <a href="/connexion">S'inscrire ici</a></p>
+      <p className='signInUp-redirect'>Tu as déjà un compte? <a href="/connexion">Se connecter</a></p>
     </div>
   );
 };

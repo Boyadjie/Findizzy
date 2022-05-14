@@ -6,8 +6,8 @@ import Avatar from '@mui/material/Avatar';
 const UserInfos = (props) => {
   return (
     <Box>
-      <Stack spacing={1} alignItems="center">
-        <Avatar alt="User Avatar" src="" />
+      <Stack spacing={2} alignItems="center">
+        <Avatar className='user-avatar' alt="User Avatar" src="" />
         <h3> { props.user.username } </h3>
         <h2> { props.user.email } </h2>
       </Stack>

@@ -14,6 +14,7 @@ import UserPetsLoader from '../components/loaders/userPetsLoader';
 import ButtonLoader from '../components/loaders/buttonLoader';
 import UserInfos from '../components/profile/UserInfos';
 import UserPets from '../components/profile/UserPets';
+import Navigation from '../components/Navigation';
 
 const Profile = () => {
   const [userLoading, setUserLoading] = useState(true);
@@ -43,11 +44,11 @@ const Profile = () => {
   }
 
   return (
-    <Box>
-      <Grid className='profileHeader' container spacing={2} alignItems="center">
+    <div className='profile'>
+      <Grid className='header' container spacing={2} alignItems="center">
         <Grid item xs={2}>
             <a className='back-arrow' href="/">
-              <ArrowBackIcon sx={{ fontSize: 40 }} />
+              <ArrowBackIcon />
             </a>
         </Grid>
         <Grid item xs={8}>
@@ -55,7 +56,7 @@ const Profile = () => {
         </Grid>
       </Grid>
 
-      <Box className='profileInformations'>
+      <Box className='profile-infos'>
         { userLoading === true ? (
           <UserInfoLoader />
         ) : (
@@ -63,13 +64,13 @@ const Profile = () => {
         ) }
       </Box>
 
-      <Box className='petsInformations'>
+      <Box className='pets-infos'>
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <h2>Mes animaux</h2>
           { userLoading === true ? (
           <ButtonLoader />
         ) : (
-          <Button href={`/profil/ajouter-animal?userId=${user.id}`} variant="contained" endIcon={<AddCircleIcon />}>Ajouter un animal</Button>
+          <Button className='btn-add' href={`/profil/ajouter-animal?userId=${user.id}`} variant="contained" endIcon={<AddCircleIcon />}>Ajouter un animal</Button>
         ) }
         </Stack>
 
@@ -79,7 +80,8 @@ const Profile = () => {
           <UserPets pets={pets} />
         ) }
       </Box>
-    </Box>
+      <Navigation />
+    </div>
   );
 };
 

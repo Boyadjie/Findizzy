@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
 
 
-$font-1: sans-serif;
+$font-1: 'Roboto', sans-serif;
 
-$color-1: #42C1BD;
-$color-2: #FFF9F3;
-$color-3: #FFF3E8;
-$color-4: #707070;
-$color-5: black;
+$color-1: #12BCE0;
+$color-2: white;
+$color-3: #FFD853;
+$color-4: #F2F2F2;
+$color-5: #3B3B3B;
 $color-6: #F5BAF7;
 $color-1-transparent: rgba(66,193,189, 0.35);
+$color-shadows : rgb(225, 225, 225);
 
 $font-footer: 2.2rem;
 $font-min: 1.5rem;
@@ -87,8 +88,6 @@ span, img {
 }
 
 .notFound {
-  height: 95vh;
-  width: 90%;
   margin: 2rem auto;
   display: flex;
   justify-content: center;

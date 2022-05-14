@@ -2,24 +2,27 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
 const UserPets = (props) => {
   return (
-    <Box>
-      <Stack spacing={1}>
+    <Box className='pet-list'>
+      <Stack spacing={2}>
         { props.pets.data.map((pet) => (
-          <Box key={pet.id}>
-            <Stack direction="row" spacing={1}>
-              <Avatar alt="Pet Avatar" src="" />
+          <Stack className='pet-card' direction="row" spacing={1} alignItems='center' justifyContent='space-between' key={pet.id}>
+            <Stack direction="row" spacing={1} alignItems='center'>
+              <Avatar className='pet-avatar' alt="Pet Avatar" src="" />
               <Stack>
                 <p>{ pet.attributes.name }</p>
                 <p>{ pet.attributes.breed }</p>
-                <p>{ pet.attributes.age }</p>
-                <a href={`/profil/pet?id=${pet.id}`}>Détails</a>
+                <p>{ pet.attributes.age } { pet.attributes.age > 1 ? ("Ans") : ("An") }</p>
               </Stack>
             </Stack>
-          </Box>
+            <Stack className='pet-detail'>
+              <a href={`/profil/pet?id=${pet.id}`}>Détails <ArrowForwardIcon /></a>
+            </Stack>
+          </Stack>
         ))}
       </Stack>
     </Box>

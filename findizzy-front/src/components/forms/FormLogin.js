@@ -54,7 +54,7 @@ const FormLogin = () => {
               label="Mot de passe"
               variant="filled"
               name="password"
-              type="text"
+              type="password"
               onChange={handleChange}
             />
           </Grid>

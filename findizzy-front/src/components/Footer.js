@@ -1,5 +1,4 @@
 import React from 'react';
-import Newsletter from './Newsletter';
 import Socials from './Socials';
 
 const Footer = () => {
@@ -50,7 +49,6 @@ const Footer = () => {
               <p>tel: 06 25 54 67 27</p>
             </div>
           </div>
-          <Newsletter />
         </div>
         <div className='legals'>
           <p><a href="/conditions-vente">Conditions Générales de Vente</a> | <a href="/information-personnelles">Vos information personnelles</a> | <a href="/cookies">Cookies</a></p>
