@@ -17,7 +17,9 @@ const FormLogin = () => {
     try {
       await authApi.authenticate(credentials);
       setIsAuthenticated(true);
-      navigate('/');
+      setTimeout(() => {
+        navigate('/');
+      }, 1000);
     } catch (e) {
       console.log(e);
     }

@@ -11,9 +11,18 @@ function createPet(pet) {
   });
 }
 
+function getPet(id) {
+  axios.get(URL_PETS + '/' + id)
+  .then(response => response.data)
+  .catch(error => {
+      console.log(error.response)
+  });
+}
+
 
 const exportedObject = {
   createPet,
+  getPet,
 };
 
 export default exportedObject;

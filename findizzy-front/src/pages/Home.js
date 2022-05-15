@@ -1,42 +1,60 @@
-import React from 'react';
-import Grid from '@mui/material/Grid';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import React, { useContext, useState, useEffect } from 'react';
+import authContext from '../contexts/authContext';
+import ProfileApi from '../services/profileApi'
+
 import Navigation from "../components/Navigation";
+import Header from "../components/Header";
 
 
 const Home = () => {
+  const {isAuthenticated} = useContext(authContext);
+  const [userLoading, setUserLoading] = useState(true);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
+  const fetchUser = async () => {
+    const myUser = await ProfileApi.findUser()
+    setTimeout(() => {
+      setUser(myUser);
+      setUserLoading(false);
+    }, 500)
+  }
+
   return (
     <div className="home" id="home">
-      <Grid className='header' container spacing={2} alignItems="center">
-        <Grid item xs={2}>
-          <a className='back-arrow' href="/">
-            <ArrowBackIcon />
-          </a>
-        </Grid>
-        <Grid item xs={8}>
-          <h1>Localiser</h1>
-        </Grid>
-      </Grid>
+      <Header />
 
       <div className="homescreen_container">
         <div className="homescreen_container_i">
           <img src="img/chat.png" alt="" />
-          <div> <h3 id='b'>Bonjour,</h3> <h3 id='bl'>LoveToutou</h3></div>
+          <div> <h3 id='b'>Bonjour,</h3>
+          { isAuthenticated ? (
+          <h3 id='bl'>
+            { userLoading ? (
+              '...'
+            ) : (
+              user.username
+            ) }
+        </h3>) : (<br/>) }
+        </div>
           <p>Nous allons t'aider à protéger tes animaux de compagnie.</p>
         </div>
       </div>
 
       <div className="homescreen_container_2">
         <div id="miaou" className="little_box">
-          <img src="img/sac.png" alt="" />
+          <img src="img/sac.png" alt="Icone Magasin" />
           <p>je veux un collier</p>
         </div>
         <div className="little_box">
-          <img src="img/logopetit.png" alt="" />
-          <p>J'ai trouvé un animala bandonné </p>
+          <img src="img/petitlogo.png" alt="Logo" />
+          <p>J'ai trouvé un animal bandonné </p>
         </div>
         <div id="miaou" className="little_box">
-          <img src="img/tete.png" alt="" />
+          <img src="img/tete.png" alt="Picto triste" />
           <p>J'ai perdu mon animal</p>
         </div>
       </div>

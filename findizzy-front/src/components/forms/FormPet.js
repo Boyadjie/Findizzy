@@ -1,20 +1,26 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+
 
 import Button from '@mui/material/Button';
 import petApi from '../../services/petApi';
 
 const FormPet = (props) => {
   const [pet, setPet] = useState({user: parseInt(props.userId)});
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const data = petApi.createPet(pet);
-      console.log(data);
+      await petApi.createPet(pet);
+      setTimeout(() => {
+        navigate('/profil');
+      }, 1000);
     } catch (e) {
       console.log(e);
     }
