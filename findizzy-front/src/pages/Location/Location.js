@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Button from '@mui/material/Button';
 
 const Location = () => {
     return (
@@ -26,7 +27,8 @@ const Location = () => {
             </div>
 
             <div className='location_footer'>
-                <button>Autoriser la localisation</button>
+                
+                <Button variant="contained" >Autoriser la localisation</Button>
             </div>
 
         </div>
