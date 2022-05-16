@@ -1,8 +1,8 @@
-import { URL_PETS } from "../config"
+import { URL_PETS, getHeader } from "../config"
 import axios from "axios";
 
 function createPet(pet) {
-  axios.post(URL_PETS, { data: pet })
+  axios.post(URL_PETS, { data: pet }, getHeader())
   .then(response => { 
     console.log(response)
   })
@@ -12,7 +12,7 @@ function createPet(pet) {
 }
 
 function getPet(id) {
-  return axios.get(URL_PETS + "/" + id).then(response => response.data)
+  return axios.get(URL_PETS + "/" + id, getHeader()).then(response => response.data)
   .catch(err => {
     console.log(err);
   });

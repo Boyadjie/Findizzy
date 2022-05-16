@@ -24,7 +24,6 @@ const App = () => {
   const [isAuthenticated,setIsAuthenticated] = useState(authApi.isAuthenticated);
 
   useEffect(() => {
-    authApi.setup();
     authApi.isAuthenticated();
   })
 
