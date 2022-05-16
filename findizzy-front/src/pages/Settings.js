@@ -29,7 +29,7 @@ const Settings = () => {
       <Navigation />
       <div className='other'>
         <List>
-        <ListItem disablePadding onClick={handleDisconnect}>
+        <ListItem disablePadding>
             <ListItemButton>
               <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
                 <ListItemText primary="Compte" />
@@ -38,7 +38,7 @@ const Settings = () => {
           </ListItem>
 
           {/* exemple a copier (avec le divider) */}
-          <ListItem disablePadding onClick={handleDisconnect}>
+          <ListItem disablePadding>
             <ListItemButton>
               <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
                 <ListItemText primary="Editer Profil" />
@@ -48,7 +48,7 @@ const Settings = () => {
           </ListItem>
           <Divider />
 
-          <ListItem disablePadding onClick={handleDisconnect}>
+          <ListItem disablePadding>
             <ListItemButton>
               <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
                 <ListItemText primary="Autre" />
