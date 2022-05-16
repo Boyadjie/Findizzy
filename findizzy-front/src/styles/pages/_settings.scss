@@ -1,0 +1,24 @@
+.settings {
+  ul {
+    padding: 0;
+
+    li {
+      &.dark {
+        background-color: #F6F6F6;
+        span {
+          font-family: 'RobotoM';
+        }
+      }
+
+      span, svg {
+        font-family: 'RobotoR';
+        font-size: 1.6rem;
+      }
+
+      .css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root {
+        padding: 1.5rem 2rem;
+      }
+    }
+
+  }
+}

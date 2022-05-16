@@ -1,0 +1,52 @@
+.signUp {
+  padding: 5rem 0;
+
+  .add-pict {
+    margin: 0 auto;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .form-register {
+    width: 100%;
+    padding: 2rem;
+
+    form {
+      width: 100%;
+
+      label {
+        display: flex;
+        align-items: flex-start;
+        gap: .2rem;
+        font-size: 1.6rem;
+      }
+
+      input {
+        font-size: 1.9rem;
+        padding: .8rem 0;
+      }
+
+      button {
+        margin-top: 2rem;
+        border-radius: 50px;
+        font-size: 1.6rem;
+        background-color: $color-3;
+        color: $color-5;
+        font-family: 'RobotoB';
+      }
+    }
+  }
+
+  .signInUp-redirect {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1.6rem;
+    color: $color-5;
+
+    a {
+      color: $color-1;
+    }
+  }
+}

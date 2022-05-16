@@ -3,6 +3,7 @@ import authApi from '../services/authApi';
 import authContext from '../contexts/authContext';
 import { useNavigate } from 'react-router-dom';
 
+import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -26,49 +27,102 @@ const Settings = () => {
 
   return (
     <div className='settings'>
-      <Navigation />
-      <div className='other'>
-        <List>
-        <ListItem disablePadding>
-            <ListItemButton>
-              <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
-                <ListItemText primary="Compte" />
-              </Stack>
-            </ListItemButton>
-          </ListItem>
+      <Grid className='header' container spacing={2} alignItems="center" justifyContent='center'>
+        <Grid item>
+          <h1>Paramètres</h1>
+        </Grid>
+      </Grid>
 
-          {/* exemple a copier (avec le divider) */}
-          <ListItem disablePadding>
+      <List>
+        <ListItem className='dark' disablePadding>
+          <ListItemButton>
+            <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+              <ListItemText primary="Compte" />
+            </Stack>
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+              <ListItemText primary="Editer Profil" />
+              <ArrowForwardIosIcon/>
+            </Stack>
+          </ListItemButton>
+        </ListItem>
+        <Divider />
+
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+              <ListItemText primary="Modifier mot de pass" />
+              <ArrowForwardIosIcon/>
+            </Stack>
+          </ListItemButton>
+        </ListItem>
+        <Divider />
+
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+              <ListItemText primary="Langues" />
+              <ArrowForwardIosIcon/>
+            </Stack>
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem className='dark' disablePadding>
+          <ListItemButton>
+            <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+              <ListItemText primary="Autre" />
+            </Stack>
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+              <ListItemText primary="Politique de confidentialité" />
+              <ArrowForwardIosIcon/>
+            </Stack>
+          </ListItemButton>
+        </ListItem>
+        <Divider />
+
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+              <ListItemText primary="Nous contacter" />
+              <ArrowForwardIosIcon/>
+            </Stack>
+          </ListItemButton>
+        </ListItem>
+        <Divider />
+
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+              <ListItemText primary="À propos" />
+              <ArrowForwardIosIcon/>
+            </Stack>
+          </ListItemButton>
+        </ListItem>
+        <Divider />
+
+        {isAuthenticated && 
+          <ListItem disablePadding onClick={handleDisconnect}>
             <ListItemButton>
               <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
-                <ListItemText primary="Editer Profil" />
+                <ListItemText primary="Se déconnecter" />
                 <ArrowForwardIosIcon/>
               </Stack>
             </ListItemButton>
           </ListItem>
-          <Divider />
+        }
+        <Divider/>
+      </List>
 
-          <ListItem disablePadding>
-            <ListItemButton>
-              <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
-                <ListItemText primary="Autre" />
-              </Stack>
-            </ListItemButton>
-          </ListItem>
-
-          {isAuthenticated && 
-            <ListItem disablePadding onClick={handleDisconnect}>
-              <ListItemButton>
-                <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
-                  <ListItemText primary="Se déconnecter" />
-                  <ArrowForwardIosIcon/>
-                </Stack>
-              </ListItemButton>
-            </ListItem>
-          }
-          <Divider/>
-        </List>
-      </div>
+      <Navigation />
     </div>
   );
 };

@@ -10,7 +10,7 @@ const Header = () => {
         <a href="/carte">
           <img src="img/carte.png" alt="Icone Carte" />
         </a>
-        <Logo />
+        <Logo image='petitlogo' />
         <a href="/notifications">
           <img src="img/bell.png" alt="Icone Notifications" />
         </a>

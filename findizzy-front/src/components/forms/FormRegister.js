@@ -1,10 +1,14 @@
 import React, { useState, useContext } from 'react';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
+
 import authApi from '../../services/authApi';
 import authContext from '../../contexts/authContext';
-import { useNavigate } from 'react-router-dom';
+
+import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
+
+import Button from '@mui/material/Button';
+
 
 const FormRegister = () => {
   const navigate = useNavigate();
@@ -33,32 +37,20 @@ const FormRegister = () => {
   }
 
   return (
-    <div className='formRegister'>
+    <div className='form-register'>
       <form onSubmit={handleSubmit}>
-        <Grid container spacing={2} alignItems="center" direction="column">
-        <Grid item>
-            <TextField required id="username" label="Nom d'utilisateur" variant="standard" name="username" type="text" 
-              onChange={handleChange}
-            />
-          </Grid>
-          <Grid item>
-            <TextField required id="email" label="E-mail" variant="standard" name="email" type="text" 
-              onChange={handleChange}
-            />
-          </Grid>
-          <Grid item>
-            <TextField id="phone" label="Numéro de téléphone" variant="standard" name="phone" type="text" 
-              onChange={handleChange}
-            />
-          </Grid>
-          <Grid item >
-            <TextField required id="password" label="Mot de passe" variant="standard" name="password" type="password" 
-              onChange={handleChange}
-            />
-          </Grid>
+        <Stack spacing={2} direction="column">
+          <TextField required id="username" label="Nom d'utilisateur" variant="standard" name="username" type="text" fullWidth onChange={handleChange}
+          />
+          <TextField required id="email" label="E-mail" variant="standard" name="email" type="text" fullWidth onChange={handleChange}
+          />
+          <TextField required id="phone" label="Numéro de téléphone" variant="standard" name="phone" type="text" fullWidth onChange={handleChange}
+          />
+          <TextField required id="password" label="Mot de passe" variant="standard" name="password" type="password" fullWidth onChange={handleChange}
+          />
 
-          <Button variant="contained" type='submit'>Envoyer</Button>
-        </Grid>
+          <Button variant="contained" type='submit'>S'inscrire</Button>
+        </Stack>
       </form>
     </div>
   );

@@ -1,10 +1,11 @@
 import React, { useState, useContext } from 'react';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
+
 import authApi from '../../services/authApi';
 import authContext from '../../contexts/authContext';
-import { useNavigate } from 'react-router-dom';
+
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const FormLogin = () => {
   const navigate = useNavigate();
@@ -35,34 +36,14 @@ const FormLogin = () => {
   }
 
   return (
-    <div className='formLogin'>
+    <div className='form-login'>
       <form onSubmit={handleSubmit}>
-        <Grid container spacing={2} alignItems="center" direction="column">
-          <Grid item>
-            <TextField
-                required
-                id="identifier"
-                label="E-mail"
-                variant="filled"
-                name="identifier"
-                type="text"
-                onChange={handleChange}
-              />
-          </Grid>
-          <Grid item >
-            <TextField
-              required
-              id="password"
-              label="Mot de passe"
-              variant="filled"
-              name="password"
-              type="password"
-              onChange={handleChange}
-            />
-          </Grid>
-
+        <Stack spacing={2} direction="column">
+          <input required id="identifier" name="identifier" type="text" placeholder='E-mail' onChange={handleChange} />
+          <input required id="password" placeholder="Mot de passe" variant="filled" name="password" type="password" onChange={handleChange} />
+          
           <Button variant="contained" type='submit'>Envoyer</Button>
-        </Grid>
+        </Stack>
       </form>
     </div>
   );
