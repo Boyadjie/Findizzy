@@ -20,7 +20,7 @@ const UserPets = (props) => {
               </Stack>
             </Stack>
             <Stack className='pet-detail'>
-              <a href={`/profil/annimal/${pet.id}`}>Détails <ArrowForwardIcon /></a>
+              <a href={`/profil/annimal?id=${pet.id}`}>Détails <ArrowForwardIcon /></a>
             </Stack>
           </Stack>
         ))}

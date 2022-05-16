@@ -6,12 +6,11 @@ import Box from '@mui/material/Box';
 const userPetsLoader = () => {
   return (
     <Box>
-      <Stack spacing={1}>
-        <Skeleton variant="rectangular" width={200} height={40} />
-        <Skeleton variant="rectangular" width={200} height={40} />
-        <Skeleton variant="rectangular" width={200} height={40} />
-        <Skeleton variant="rectangular" width={200} height={40} />
-        <Skeleton variant="rectangular" width={200} height={40} />
+      <Stack spacing={2} marginTop='2rem'>
+        <Skeleton variant="rectangular" fullwidth="true" height={77} />
+        <Skeleton variant="rectangular" fullwidth="true" height={77} />
+        <Skeleton variant="rectangular" fullwidth="true" height={77} />
+        <Skeleton variant="rectangular" fullwidth="true" height={77} />
       </Stack>
     </Box>
   );

@@ -12,10 +12,9 @@ function createPet(pet) {
 }
 
 function getPet(id) {
-  axios.get(URL_PETS + '/' + id)
-  .then(response => response.data)
-  .catch(error => {
-      console.log(error.response)
+  return axios.get(URL_PETS + "/" + id).then(response => response.data)
+  .catch(err => {
+    console.log(err);
   });
 }
 

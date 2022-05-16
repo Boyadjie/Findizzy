@@ -35,7 +35,7 @@ const App = () => {
           <Route exact path='/inscription' element={<SingUp/>} />
           <Route exact path='/profil' element={<PrivateLogin ><Profile/></PrivateLogin>} />
           <Route exact path="/profil/ajouter-animal" element={<CreatePet/>} />
-          <Route exact path='/profil/annimal/:id' element={<PetInfo/>} />
+          <Route exact path='/profil/annimal' element={<PetInfo/>} />
           <Route exact path='/localiser' element={<Location />} />
           <Route exact path='/reglages' element={<PrivateSettings ><Settings/></PrivateSettings>} />
           <Route path='*' element={<NotFound/>} />

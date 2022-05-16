@@ -6,8 +6,8 @@ import Box from '@mui/material/Box';
 const userInfoLoader = () => {
   return (
     <Box>
-      <Stack spacing={1} alignItems="center">
-        <Skeleton variant="circular" width={40} height={40} />
+      <Stack spacing={2} alignItems="center">
+        <Skeleton variant="circular" width={120} height={120} />
         <Skeleton variant="rectangular" width={60} height={15} />
         <Skeleton variant="rectangular" width={150} height={15} />
       </Stack>

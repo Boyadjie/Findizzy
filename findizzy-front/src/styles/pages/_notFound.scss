@@ -1,0 +1,14 @@
+.notFound {
+  position: relative;
+
+  .error-img {
+    position: absolute;
+    display: block;
+    height: 77rem;
+    width: 100%;
+    top: 100%;
+    background-image: url(./../../assets/404.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+}

@@ -1,31 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
 import petApi from '../../services/petApi';
 
-const PetDetails = ({ petId }) => {
+const PetInfo = () => {
   const [petInfos, setPetInfos] = useState(null);
+  const [petLoading, setPetLoading] = useState(true);
+
+  let [searchParams] = useSearchParams();
 
   useEffect(() => {
-    fetchPetInfos(petId);
-  }, []);
+    fetchPetInfos(searchParams.get("id"));
+  }, [searchParams]);
 
   const fetchPetInfos =  async (id) => {
     const myPet = await petApi.getPet(id);
-    setPetInfos(myPet);
+    setTimeout(() => {
+      setPetInfos(myPet);
+      setPetLoading(false);
+    }, 500);
   }
 
   return (
     <div>
-      <p>{ console.log(petInfos) }</p>
+      <p>{ petLoading ? "loading..." :  (petInfos.data.attributes.name) }</p>
     </div>
-  );
-}
-
-const PetInfo = () => {
-  const { id } = useParams();
-
-  return (
-    <PetDetails petId={id}/>
   );
 };
 

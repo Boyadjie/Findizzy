@@ -1,10 +1,18 @@
 import React from 'react';
+
+import Grid from '@mui/material/Grid';
+
 import Navigation from '../components/Navigation';
 
 const NotFound = () => {
   return (
     <div className='notFound'>
-      <h1>Page not found</h1>
+      <Grid className='header' container spacing={2} alignItems="center" justifyContent='center'>
+        <Grid item>
+          <h1>Erreur</h1>
+        </Grid>
+      </Grid>
+      <div className='error-img'></div>
       <Navigation />
     </div>
   );
