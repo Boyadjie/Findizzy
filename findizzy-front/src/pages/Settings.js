@@ -3,6 +3,14 @@ import authApi from '../services/authApi';
 import authContext from '../contexts/authContext';
 import { useNavigate } from 'react-router-dom';
 
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import Stack from '@mui/material/Stack';
+import Divider from '@mui/material/Divider';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 import Navigation from "../components/Navigation";
 
 
@@ -20,9 +28,46 @@ const Settings = () => {
     <div className='settings'>
       <Navigation />
       <div className='other'>
-        <ul>
-          {isAuthenticated && <li onClick={handleDisconnect}>Se déconnecter</li>}
-        </ul>
+        <List>
+        <ListItem disablePadding onClick={handleDisconnect}>
+            <ListItemButton>
+              <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+                <ListItemText primary="Compte" />
+              </Stack>
+            </ListItemButton>
+          </ListItem>
+
+          {/* exemple a copier (avec le divider) */}
+          <ListItem disablePadding onClick={handleDisconnect}>
+            <ListItemButton>
+              <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+                <ListItemText primary="Editer Profil" />
+                <ArrowForwardIosIcon/>
+              </Stack>
+            </ListItemButton>
+          </ListItem>
+          <Divider />
+
+          <ListItem disablePadding onClick={handleDisconnect}>
+            <ListItemButton>
+              <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+                <ListItemText primary="Autre" />
+              </Stack>
+            </ListItemButton>
+          </ListItem>
+
+          {isAuthenticated && 
+            <ListItem disablePadding onClick={handleDisconnect}>
+              <ListItemButton>
+                <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+                  <ListItemText primary="Se déconnecter" />
+                  <ArrowForwardIosIcon/>
+                </Stack>
+              </ListItemButton>
+            </ListItem>
+          }
+          <Divider/>
+        </List>
       </div>
     </div>
   );
