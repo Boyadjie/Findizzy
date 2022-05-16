@@ -16,6 +16,7 @@ import NotFound from './pages/NotFound';
 import CreatePet from './pages/pets/CreatePet';
 import Profile from './pages/Profile';
 import Location from './pages/Location/Location';
+import Scan from './pages/Location/Scan'
 import Settings from './pages/Settings';
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
           <Route exact path="/profil/ajouter-animal" element={<CreatePet/>} />
           <Route exact path='/profil/annimal' element={<PetInfo/>} />
           <Route exact path='/localiser' element={<Location />} />
+          <Route exact path='/localiser/scan' element={<Scan />} />
           <Route exact path='/reglages' element={<PrivateSettings ><Settings/></PrivateSettings>} />
           <Route path='*' element={<NotFound/>} />
         </Routes>

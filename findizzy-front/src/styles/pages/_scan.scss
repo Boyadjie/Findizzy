@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,400,700");
+
+#reader__dashboard_section_swaplink {
+    display: none;
+}
+
+#reader__camera_permission_button {
+    visibility: hidden;
+    &:hover {
+      cursor: pointer;
+  }
+}
+
+
+
+
+#reader__camera_permission_button:after {
+    content: 'Autoriser la camera';
+    visibility: visible;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $color-3;
+    padding: 1.5rem 5rem;
+    border-radius: 25px;
+}
+
+#reader__dashboard_section {
+  span {
+    display: none;
+  }
+}
+
+dis
+
+.stats-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding-top: 5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-title {
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  text-align: left;
+}
+
+.stat-sub-title {
+  color: #a1a1a6;
+  text-align: left;
+  margin: 0;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.stat-line {
+  width: 2em;
+  border: 2px solid white;
+  margin: 0;
+  margin-bottom: 0.9rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+
+
+
+.h1-color {
+  background: linear-gradient(180deg, #737373 0%, #00479b 100%);
+  -webkit-text-fill-color: transparent;
+}
+
+.sub-title {
+  color: #a1a1a6;
+  line-height: 175.19%;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.space-x-logo {
+  width: 10rem;
+}
+
+
+.nav-items {
+  display: flex;
+  gap: 1rem;
+  color: white;
+}
+
+.content {
+  padding: 1rem 10rem 0rem 10rem;
+}
+
+#reader__scan_region {
+    img {
+        display: none;
+    }
+}
+
+#reader {
+    img {
+        display: none;
+    }
+}
+
+.main-image {
+  align-self: end;
+} 
