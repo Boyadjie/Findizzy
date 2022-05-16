@@ -34,7 +34,7 @@ const Scan = () => {
       html5QrcodeScanner.render(onScanSuccess, onScanFailure);
     });
     return (
-        <div>
+        <div className="scan">
         <div id="reader" width="100vw"></div>
         <ol>
           {scannedCodes.map((scannedCode, index) => (

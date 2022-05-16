@@ -18,6 +18,7 @@ import Profile from './pages/Profile';
 import Location from './pages/Location/Location';
 import Scan from './pages/Location/Scan'
 import Settings from './pages/Settings';
+import ScanInfo from './pages/Location/ScanInfo';
 
 const App = () => {
   const [isAuthenticated,setIsAuthenticated] = useState(authApi.isAuthenticated);
@@ -39,6 +40,7 @@ const App = () => {
           <Route exact path='/profil/annimal' element={<PetInfo/>} />
           <Route exact path='/localiser' element={<Location />} />
           <Route exact path='/localiser/scan' element={<Scan />} />
+          <Route exact path='/localiser/info' element={<ScanInfo />} />
           <Route exact path='/reglages' element={<PrivateSettings ><Settings/></PrivateSettings>} />
           <Route path='*' element={<NotFound/>} />
         </Routes>
