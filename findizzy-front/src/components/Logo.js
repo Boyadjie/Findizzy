@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Logo = () => {
+const Logo = (props) => {
   return (
     <div className='logo'>
       <a href="/">
-        <img src="/img/petitlogo.png" alt="Logo" />
+        <img src={`/img/${props.image}.png`} alt="Logo" />
       </a>
     </div>
   );

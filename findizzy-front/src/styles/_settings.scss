@@ -22,7 +22,8 @@ $color-4: #F2F2F2;
 $color-5: #3B3B3B;
 $color-6: #B1B1B1;
 $color-1-transparent: rgba(66,193,189, 0.35);
-$color-shadows : rgb(225, 225, 225);
+$color-shadows: rgb(225, 225, 225);
+$color-blue-shadow: rgba(31,84,195, 0.15);
 
 $font-footer: 2.2rem;
 $font-min: 1.5rem;
@@ -73,10 +74,6 @@ a {
   text-decoration: none;
   cursor: pointer;
   color: $color-5;
-
-  &:visited {
-    color: $color-5;
-  }
 
   &:active {
     color: $color-1;
