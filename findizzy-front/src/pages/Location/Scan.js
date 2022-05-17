@@ -10,9 +10,9 @@ const Scan = () => {
     function activateLasers() {
       var decodedText = "asdf";
       var decodedResult = "asdfasdfasdf";
-      console.log(scannedCodes);
+      // console.log(scannedCodes);
   
-      setScannedCodes(scannedCodes.concat([{ decodedText, decodedResult }]));
+      // setScannedCodes(scannedCodes.concat([{ decodedText, decodedResult }]));
     }
   
     useEffect(() => {

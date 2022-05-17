@@ -40,7 +40,7 @@ const App = () => {
           <Route exact path='/profil/annimal' element={<PetInfo/>} />
           <Route exact path='/localiser' element={<Location />} />
           <Route exact path='/localiser/scan' element={<Scan />} />
-          <Route exact path='/localiser/info' element={<ScanInfo />} />
+          <Route exact path='/localiser/scan/info' element={<ScanInfo />} />
           <Route exact path='/reglages' element={<PrivateSettings ><Settings/></PrivateSettings>} />
           <Route exact path='/politique-confidentialite' element={<PrivacyPolicy />} />
           <Route path='*' element={<NotFound/>} />
