@@ -3,6 +3,11 @@
     padding: 0;
 
     li {
+
+      a {
+        width: 100%;
+      }
+      
       &.dark {
         background-color: #F6F6F6;
         span {

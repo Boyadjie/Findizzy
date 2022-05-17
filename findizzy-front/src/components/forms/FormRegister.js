@@ -49,6 +49,8 @@ const FormRegister = () => {
           <TextField required id="password" label="Mot de passe" variant="standard" name="password" type="password" fullWidth onChange={handleChange}
           />
 
+          <p className='privacy'>En cliquants sur le bouton s'inscrire vous accepter nos conditions d'utilisation.<br/>Pour en savoir plus sur la gestion de vos données personnelles et pour exercer vos droits, consulter la <a href="/politique-confidentialite">politique de confidentialite</a></p>
+
           <Button variant="contained" type='submit'>S'inscrire</Button>
         </Stack>
       </form>

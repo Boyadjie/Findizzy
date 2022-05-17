@@ -36,6 +36,18 @@
         color: $color-5;
         font-family: 'RobotoB';
       }
+
+      .privacy {
+        text-align: center;
+        font-size: 1rem;
+        color: $color-6;
+        line-height: 1.5;
+    
+        a {
+          color: #939393;
+          text-decoration: underline;
+        }
+      }
     }
   }
 

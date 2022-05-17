@@ -80,12 +80,14 @@ const Settings = () => {
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton>
-            <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
-              <ListItemText primary="Politique de confidentialité" />
-              <ArrowForwardIosIcon/>
-            </Stack>
-          </ListItemButton>
+          <a href="/politique-confidentialite">
+            <ListItemButton>
+              <Stack direction='row' justifyContent='space-between' alignItems='center' width='100%'>
+                <ListItemText primary="Politique de confidentialité" />
+                <ArrowForwardIosIcon/>
+              </Stack>
+            </ListItemButton>
+          </a>
         </ListItem>
         <Divider />
 

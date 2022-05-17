@@ -19,6 +19,7 @@ import Location from './pages/Location/Location';
 import Scan from './pages/Location/Scan'
 import Settings from './pages/Settings';
 import ScanInfo from './pages/Location/ScanInfo';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 const App = () => {
   const [isAuthenticated,setIsAuthenticated] = useState(authApi.isAuthenticated);
@@ -41,6 +42,7 @@ const App = () => {
           <Route exact path='/localiser/scan' element={<Scan />} />
           <Route exact path='/localiser/info' element={<ScanInfo />} />
           <Route exact path='/reglages' element={<PrivateSettings ><Settings/></PrivateSettings>} />
+          <Route exact path='/politique-confidentialite' element={<PrivacyPolicy />} />
           <Route path='*' element={<NotFound/>} />
         </Routes>
       </BrowserRouter>
