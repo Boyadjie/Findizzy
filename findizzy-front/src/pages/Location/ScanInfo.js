@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import scanApi from '../../services/scanApi';
 
 const ScanInfo = () => {
-
     let searchParams = parseInt(window.location.search.slice(7));
 
     const [scanInfo, setscanInfo] = useState(null);
-    const [ScanLoading, setScanLoading] = useState(true);
-
-    let [searchParams] = useSearchParams();
+    const [scanLoading, setScanLoading] = useState(true);
 
 
     useEffect(() => {
@@ -15,15 +13,16 @@ const ScanInfo = () => {
       }, [searchParams]);
     
       const fetchscanInfo =  async (id) => {
-        const myUser = await scanApi.getScan(id);
+        const myMail = await scanApi.getUserMail(id);
         setTimeout(() => {
-          setscanInfo(myUser);
+          setscanInfo(myMail);
           setScanLoading(false);
         }, 500);
+      }
 
     return (
         <div>
-            
+          {scanLoading ? console.log("") : console.log(scanInfo)}
         </div>
     );
 };

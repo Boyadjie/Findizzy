@@ -6,14 +6,6 @@ const Scan = () => {
 
     const [scannedCodes, setScannedCodes] = useState([]);
     const navigate = useNavigate();
-
-    function activateLasers() {
-      var decodedText = "asdf";
-      var decodedResult = "asdfasdfasdf";
-      // console.log(scannedCodes);
-  
-      // setScannedCodes(scannedCodes.concat([{ decodedText, decodedResult }]));
-    }
   
     useEffect(() => {
       function onScanSuccess(decodedText, decodedResult) {

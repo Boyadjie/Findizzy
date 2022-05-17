@@ -4,6 +4,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Button from '@mui/material/Button';
 
 const Location = () => {
+
     return (
         <div className='location'>
             <Grid className='header' container spacing={2} alignItems="center">
@@ -28,7 +29,7 @@ const Location = () => {
 
             <div className='location_footer'>
                 
-                <Button variant="contained" >Autoriser la localisation</Button>
+                <Button href="/localiser/scan" variant="contained" >Autoriser la localisation</Button>
             </div>
 
         </div>

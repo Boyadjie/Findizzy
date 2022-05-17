@@ -10,6 +10,10 @@ const PetProfile = (props) => {
         <Avatar className='pet-avatar' alt="Pet Avatar" src="" />
         <h3> { props.pet.attributes.name } </h3>
       </Stack>
+
+      <Stack spacing={2}>
+      
+      </Stack>
     </Box>
   );
 };
