@@ -2,7 +2,6 @@ import { URL_USERS, URL_PETS, getHeader } from "../config"
 import axios from "axios";
 
 function findUser() {
-  const userId = window.localStorage.getItem("userId");
   return axios.get(URL_USERS + "/me", getHeader()).then(response => response.data)
   .catch(err => {
     console.log(err);
