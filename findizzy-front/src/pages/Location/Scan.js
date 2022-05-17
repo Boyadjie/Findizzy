@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Scan = () => {
 
     const [scannedCodes, setScannedCodes] = useState([]);
+    const navigate = useNavigate();
 
     function activateLasers() {
       var decodedText = "asdf";
@@ -18,7 +19,7 @@ const Scan = () => {
       function onScanSuccess(decodedText, decodedResult) {
         // handle the scanned code as you like, for example:
         console.log(`Code matched = ${decodedText}`, decodedResult);
-        <Redirect to={{ pathname: '/localiser'}}  />
+        navigate(`${decodedText}`) 
         setScannedCodes(scannedCodes.concat([{ decodedText, decodedResult }]));
       }
   
