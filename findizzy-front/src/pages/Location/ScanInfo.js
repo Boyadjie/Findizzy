@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import FormLocate from '../../components/forms/FormLocate';
 import scanApi from '../../services/scanApi';
 
 const ScanInfo = () => {
@@ -22,7 +23,9 @@ const ScanInfo = () => {
 
     return (
         <div>
-          {scanLoading ? console.log("") : console.log(scanInfo)}
+          {scanLoading ? console.log("") : (
+            <FormLocate mailTo={scanInfo} location="coordonnées" />
+          )}
         </div>
     );
 };
