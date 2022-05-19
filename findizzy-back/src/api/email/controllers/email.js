@@ -10,7 +10,7 @@ module.exports = {
       replyTo: 'strapi.pro@gmail.com',
       subject: 'Votre annimal à été trouvé !',
       text: `Votre animal vient d'être localiser aux coordonnées suivantes : ${petLocation} !`,
-      html: `<h1>Votre animal vient d'être localiser aux coordonnées suivantes : ${petLocation} !<h1/>`,
+      html: `<h1>Votre animal vient d'être localiser aux coordonnées suivantes : <a href='https://www.google.com/maps/place/${petLocation}'>${petLocation}</a> !<h1/>`,
     });
 
     ctx.body = entry;
