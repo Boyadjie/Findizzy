@@ -70,7 +70,7 @@ const Profile = () => {
           { userLoading === true ? (
           <ButtonLoader />
         ) : (
-          <Button className='btn-add' href={`/profil/ajouter-animal?userId=${user.id}`} variant="contained" endIcon={<AddCircleIcon />}>Ajouter un animal</Button>
+          <Button className='btn-add' href={`/profil/ajouter-animal?id=${user.id}`} variant="contained" endIcon={<AddCircleIcon />}>Ajouter un animal</Button>
         ) }
         </Stack>
 

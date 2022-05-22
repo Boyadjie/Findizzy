@@ -16,7 +16,7 @@ const CreatePet = () => {
   }, []);
 
   const getUserId = async () => {
-    const myUserId = await window.localStorage.getItem("userId");
+    const myUserId = await window.localStorage.getItem("id");
     setTimeout(() => {
       setUserId(myUserId);
       setUserIdLoading(false);

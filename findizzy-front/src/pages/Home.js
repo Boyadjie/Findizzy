@@ -51,7 +51,7 @@ const Home = () => {
         </div>
         <div className="little_box">
           <img src="img/petitlogo.png" alt="Logo" />
-          <p>J'ai trouvé un animal bandonné </p>
+          <p>J'ai trouvé un animal abandonné </p>
         </div>
         <div id="miaou" className="little_box">
           <img src="img/tete.png" alt="Picto triste" />

@@ -1,0 +1,42 @@
+.petForm {
+  margin-top: 4rem;
+
+  form {
+    width: 100%;
+
+    div {
+      width: 100%;
+      margin: 0 auto;
+      padding-left: 0  !important;
+
+      .MuiFormControl-root {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+      }
+
+      input, label {
+        font-size: 1.6rem;
+        width: 100%;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      button {
+        width: 80%;
+        margin-top: 2rem;
+        background: $color-1;
+
+        &:hover {
+          background: $color-3;
+          color: $color-5;
+        }
+      }
+    }
+
+  }
+}

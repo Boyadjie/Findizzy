@@ -35,7 +35,7 @@ const FormPet = (props) => {
   }
 
   return (
-    <Stack spacing={1} alignItems="center">
+    <Stack className='petForm' spacing={1} alignItems="center">
       <form onSubmit={handleSubmit}>
         {console.log(pet)}
         <Grid container spacing={2} alignItems="center" direction="column">
@@ -71,10 +71,10 @@ const FormPet = (props) => {
               onChange={handleChange}
             />
           </Grid>
-          <Grid item>
+          {/* <Grid item>
             <label htmlFor="pet-avatar">Picture : </label>
             <input type="file" id="pet-avatar" name="picture" accept="image/png, image/jpeg, image/webp, image/jpg" />
-          </Grid>
+          </Grid> */}
 
           <Button variant="contained" type='submit'>Envoyer</Button>
         </Grid>
